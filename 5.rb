@@ -4,20 +4,20 @@
 
 def smallest_multiple(range)
   raise TypeError unless range.kind_of?(Range)
-    current_multiple ||= nil
-    range.each do |n|
-      next if n==1 || n==range.max
-      i||=1
+  current_multiple ||= nil
+  range.each do |n|
+    next if n==1 || n==range.max
+    i||=1
 
+    product = (current_multiple || n)*i
+
+    while product%(n+1)!=0
+      i+=1
       product = (current_multiple || n)*i
-
-      while product%(n+1)!=0
-        i+=1
-        product = (current_multiple || n)*i
-      end
-        current_multiple=product
-        i=1
     end
+    current_multiple=product
+    i=1
+  end
   return current_multiple
 end
 
