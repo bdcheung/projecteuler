@@ -5,8 +5,9 @@
 end
 
 @success = []
-(2..9999).each do |x|
-  puts "Working #{x}"
+
+
+(2..999999).each do |x|
   @sum = 0
   digits = x.to_s.chars.map(&:to_i)
   digits.each do |y|
