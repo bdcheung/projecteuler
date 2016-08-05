@@ -17,7 +17,7 @@ def smallest_multiple(range)
   return current_multiple
 end
 
-#
+# The below is my first iteration, which was slow and costly.
 
 # max = range.to_a.inject(1){|product, x| product * x}
 #
