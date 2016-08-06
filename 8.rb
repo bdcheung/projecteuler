@@ -22,7 +22,6 @@ input = %{73167176531330624919225119674426574742355349194934
 count = 13
 
 max_product = 0
-possibilities = []
 
 (0..input.count).each do |index|
   if input[index+count-1]
@@ -30,11 +29,10 @@ possibilities = []
     (index..index+count-1).each do |x|
       sub_array << input[x]
     end
-    possibilities << sub_array
     current_product = sub_array.inject(1){|product,x| product*x}
     if current_product > max_product
       max_product = current_product
     end
   end
 end
-max_product
+puts max_product
